@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Code Center</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav.png">
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+          darkMode: 'class',
+      }
+    </script>
+  </head>
+  
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+     <a href="#">
+      <img 
+        src="img/logo.png" 
+        alt="Talent Code Center"
+        width="150"
+        height="75"
+        class="object-contain"
+      />
+    </a>
+    <!-- Hamburger Button -->
+    <button id="hamburger" class="lg:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+    <!-- Navbar Menu -->
+    <ul id="menu" class="hidden lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 mt-4 lg:mt-0">
+      <li><a href="#home" class="hover:text-blue-600" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-600" onclick="closeMenu()">About</a></li>
+      <li><a href="#kelas" class="hover:text-blue-600" onclick="closeMenu()">Kelas</a></li>
+      <li><a href="#fasilitator" class="hover:text-blue-600" onclick="closeMenu()">Fasilitator</a></li>
+      <li><a href="#contact" class="hover:text-blue-600" onclick="closeMenu()">Contact</a></li>
+      <div class="flex items-center space-x-4 ml-12">
+        <span class="text-sm text-slate-500">Light</span>
+        <label for="toggle" class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="toggle" class="sr-only peer">
+          <div class="w-9 h-5 bg-slate-300 rounded-full peer-checked:bg-blue-500 transition-colors"></div>
+          <div class="absolute left-0 top-0 w-4 h-4 bg-white rounded-full shadow transform transition-transform peer-checked:translate-x-4"></div>
+        </label>
+        <span class="text-sm text-slate-500">Dark</span>
+      </div>
+    </ul>
+  </div>
+</nav>
+  <!-- Home Section -->
+<section id="home" class="min-h-screen bg-white dark:bg-gray-800">
+  <div class="container mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+    <!-- Text Content -->
+    <div class="text-left">
+      <p
+        class="max-w-xl lg:max-w-2xl
+               text-2xl sm:text-3xl lg:text-4xl
+               leading-relaxed lg:leading-snug
+               text-gray-900 dark:text-white"
+      >
+        Talent Code Center adalah lembaga pelatihan yang mengembangkan kompetensi
+        Guru, Pengajar, dan Praktisi melalui pendekatan praktis di bidang IT dan teknologi.
+      </p>
+
+      <a
+        href="https://wa.me/6281265455845"
+        target="_blank"
+        class="mt-8 inline-block bg-blue-600 hover:bg-blue-800 text-white px-8 py-3 rounded-lg transition"
+      >
+        Hubungi via WhatsApp
+      </a>
+    </div>
+
+    <!-- Slider -->
+    <div class="relative w-full">
+      <div
+        id="slider"
+        class="relative w-full aspect-video overflow-hidden rounded-xl shadow-lg"
+      >
+        <!-- Slide 1 -->
+        <div class="slide absolute inset-0">
+          <img
+            src="img/guru1.png"
+            alt="Guru Meeting"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide absolute inset-0 hidden">
+          <img
+            src="https://img.freepik.com/free-photo/millennial-asia-businessmen-businesswomen-having-conference-video-call-meeting-brainstorming-ideas-about-new-project-colleagues-working-together-planning-strategy-enjoy-teamwork-modern-office_7861-2384.jpg"
+            alt="Meeting Team"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide absolute inset-0 hidden">
+          <img
+            src="https://img.freepik.com/free-photo/group-asia-young-creative-people-smart-casual-wear-smiling-arms-crossed-creative-office-workplace_7861-3144.jpg"
+            alt="Creative Team"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Navigation -->
+        <button
+          id="prev"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          id="next"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Slider Script -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('hidden', i !== index);
+    });
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+
+  showSlide(currentSlide);
+</script>
+
+  <!-- About / Kelebihan Kami Section -->
+<section id="about" class="py-24 bg-gray-100 dark:bg-gray-900">
+  <div class="container mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+        Kelebihan Kami
+      </h2>
+      <div class="mt-3 w-20 h-1 bg-blue-600 mx-auto rounded"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Image -->
+      <div class="flex justify-center">
+        <img
+          src="img/garduation.png"
+          alt="Kelebihan Talent Code Center"
+          class="rounded-xl shadow-lg max-w-full"
+        />
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Praktisi Berpengalaman</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Program pelatihan disusun dan dibawakan langsung oleh praktisi aktif di bidang IT.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Fokus & Terukur</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Peserta dibekali metode agar mampu mengembangkan materi secara aplikatif.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Praktis & Kontekstual</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Hands-on, studi kasus nyata, dan simulasi pembelajaran.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11z" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Relevan Zaman</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Kurikulum fleksibel dan adaptif terhadap kebutuhan.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Berkelanjutan</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Pendampingan untuk pengembangan profesional jangka panjang.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mx-auto mb-4 text-blue-600"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17 20h5v-2a4 4 0 00-5-4m-2 6v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 015-4m0-6a4 4 0 100-8 4 4 0 000 8zm6 4a4 4 0 100-8 4 4 0 000 8z" />
+          </svg>
+          <h3 class="text-lg font-semibold mb-2">Kolaboratif</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Membangun kolaborasi antar guru, pengajar, dan praktisi.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Class Section -->
+  <section id="kelas" class="min-h-screen flex items-center py-16 bg-gray-200 dark:bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Kelas Pilihan</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+          <img src="img/sd.png" alt="Project 1" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SD</h3>
+          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
+          <h2 class="text-3xl text-blue-600 mb-2">Rp 2.500.000</h2>
+            <button class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+          Chat WA Sekarang
+        </button>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+          <img src="img/smp.png" alt="Project 1" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SMP</h3>
+          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
+          <h2 class="text-3xl text-blue-600 mb-2">Rp 3.500.000</h2>
+          <button class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+          Chat WA Sekarang
+        </button>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+          <img src="img/smk.png" alt="Project 1" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SMA/K</h3>
+          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
+          <h2 class="text-3xl text-blue-600 mb-2">Rp 3.500.000</h2>
+          <button class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+          Chat WA Sekarang
+        </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasil Section -->
+<section id="fasilitator" class="min-h-screen flex items-center py-16 bg-gray-100 dark:bg-gray-900">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Fasilitator</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/fasil.png">
+        <h3 class="text-xl font-semibold mt-4">Mr AAA</h3>
+        <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
+        <p class="mt-2 mb-2">Trainer BNSP KKNI Level 4</p>
+        <p class="mt-2 mb-2">Trainer Kartu Prakerja</p>
+        <p class="mt-2 mb-2">Trainer Corporate Training</p>
+        <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/fasil.png">
+        <h3 class="text-xl font-semibold mt-4">Mr AA</h3>
+        <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
+        <p class="mt-2 mb-2">Trainer BNSP KKNI Level 4</p>
+        <p class="mt-2 mb-2">Trainer Kartu Prakerja</p>
+        <p class="mt-2 mb-2">Trainer Corporate Training</p>
+        <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/arifin.jpeg">
+        <h3 class="text-xl font-semibold mt-4">Muhammad Arifin Nursalim,S.Kom</h3>
+        <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
+        <p class="mt-2 mb-2">Trainer BNSP KKNI Level 4</p>
+        <p class="mt-2 mb-2">Trainer Kartu Prakerja</p>
+        <p class="mt-2 mb-2">Trainer Corporate Training</p>
+        <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+ <!-- Contact Section -->
+<section id="contact" 
+class="min-h-screen flex items-center py-16 bg-gray-200 dark:bg-gray-800 relative">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 dark:opacity-40" 
+  style="background-image: url('https://via.placeholder.com/1920x1080');">
+</div>
+<div class="container mx-auto relative z-10">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Contact Us</h2>
+  <form class="max-w-xl mx-auto space-y-4 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+    <input type="text" placeholder="Your Name" 
+      class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white">
+    <input type="email" placeholder="Your Email" 
+      class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white">
+    <textarea placeholder="Your Message" 
+      class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-600 text-gray-900 dark:text-white"></textarea>
+    <button type="submit" 
+      class="w-full bg-blue-600 hover:bg-blue-800 text-white p-3 rounded-lg transition">Kirim</button>
+  </form>
+</div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="flex items-center bg-white dark:bg-gray-800 py-8">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <!-- <h4 class="text-xl font-bold">TALENT CODE CENTER</h4> -->
+        <a href="#">
+          <img 
+            src="img/logo.png" 
+            alt="Talent Code Center"
+            width="300"
+            height=""
+            class="object-contain"
+          />
+        </a>
+
+      </div>
+      <div>
+        <h4 class="text-xl font-bold">Links</h4>
+        <ul>
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold">Contact</h4>
+        <p>Email: example@domain.com</p>
+      </div>
+    </div>
+  </footer>
+ <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+  ↑
+</button>
+<script>
+  // Menu toggle logic
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('block');
+  });
+
+  // Dark mode toggle logic
+  const checkbox = document.querySelector('#toggle');
+  const html = document.querySelector('html');
+  checkbox.addEventListener('click', function () {
+    checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+  });
+
+  // Back to top button logic
+  const backToTopButton = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.remove('hidden');
+      backToTopButton.classList.add('block');
+    } else {
+      backToTopButton.classList.add('hidden');
+      backToTopButton.classList.remove('block');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling
+    });
+  });
+</script>
+<!-- Floating WhatsApp Button - TCC with WA Logo -->
+<a href="https://wa.me/6281265455845?text=Halo%20saya%20ingin%20bertanya%20tentang%20kelas"
+   target="_blank"
+   class="fixed bottom-6 left-6 flex items-center gap-2
+          bg-blue-600 hover:bg-blue-700
+          text-white px-4 py-3 rounded-full
+          shadow-lg z-50 transition">
+
+  <!-- WhatsApp Logo -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 32 32"
+       class="w-5 h-5 fill-current">
+    <path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.8 5.6 2.4 8L0 32l8.2-2.2c2.4 1.4 5.2 2.2 7.8 2.2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.4 0-4.8-.6-6.8-1.8l-.4-.2-4.8 1.2 1.2-4.6-.2-.4c-1.2-2-1.8-4.4-1.8-6.8C3.2 9.2 9.2 3.2 16 3.2S28.8 9.2 28.8 16 22.8 29 16 29zm6-8.2c-.4-.2-2.6-1.2-3-1.4-.4-.2-.8-.2-1.2.2-.4.4-1.4 1.4-1.6 1.6-.2.2-.6.2-1 0-.4-.2-1.8-.6-3.4-2-1.2-1-2-2.2-2.2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.6.6-.8.2-.2.2-.4.4-.6.2-.2.2-.4 0-.6-.2-.2-1.2-2.8-1.6-3.8-.4-1-.8-.8-1.2-.8h-1c-.4 0-.6.2-.8.4-.2.2-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2.2 3.4 5.4 4.8 3.2 1.4 3.2 1 3.8 1 .6 0 2-.8 2.2-1.6.2-.8.2-1.4.2-1.6-.2-.2-.4-.2-.8-.4z"/>
+  </svg>
+
+  <!-- Text -->
+  <span class="text-sm font-semibold">
+    Chat WhatsApp
+  </span>
+</a>
+
+
+</body>
+</html>
