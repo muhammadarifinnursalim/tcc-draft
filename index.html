@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/tc.png">
     <title>Talent Code Center</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/img/fav.png">
@@ -40,6 +41,7 @@
       <li><a href="#about" class="hover:text-blue-600" onclick="closeMenu()">About</a></li>
       <li><a href="#kelas" class="hover:text-blue-600" onclick="closeMenu()">Kelas</a></li>
       <li><a href="#fasilitator" class="hover:text-blue-600" onclick="closeMenu()">Fasilitator</a></li>
+      <li><a href="#portfolio" class="hover:text-blue-600" onclick="closeMenu()">Portofolio</a></li>
       <li><a href="#contact" class="hover:text-blue-600" onclick="closeMenu()">Contact</a></li>
       <div class="flex items-center space-x-4 ml-12">
         <span class="text-sm text-slate-500">Light</span>
@@ -281,48 +283,66 @@
 </section>
 
   <!-- Class Section -->
-  <section id="kelas" class="min-h-screen flex items-center py-16 bg-gradient-to-br from-blue-600 to-indigo-700">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Kelas Pilihan</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-          <img src="img/sd.png" alt="Project 1" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SD</h3>
-          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
-          <h2 class="text-3xl text-blue-600 mb-2">Rp 2.500.000</h2>
-            <a href="https://wa.me/6281265455845?text=Halo%20saya%20tertarik%20dengan%20program%20kelas%20di%20Talent%20Code%20Center.%20Mohon%20informasinya."
-          target="_blank"
-            class="inline-block bg-amber-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-            Chat WA Sekarang
-          </a>
+<section id="kelas" class="min-h-screen flex items-center py-16 bg-gradient-to-br from-blue-600 to-indigo-700">
+  <div class="container mx-auto px-6">
 
-        </div>
-        
-        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-          <img src="img/smp.png" alt="Project 1" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SMP</h3>
-          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
-          <h2 class="text-3xl text-blue-600 mb-2">Rp 3.000.000</h2>
-          <a href="https://wa.me/6281265455845?text=Halo%20saya%20tertarik%20dengan%20program%20kelas%20di%20Talent%20Code%20Center.%20Mohon%20informasinya."
-          target="_blank"
-          class="inline-block bg-amber-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-          Chat WA Sekarang
-          </a>
-        </div>
-        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-          <img src="img/smk.png" alt="Project 1" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">KKA Lanjutan SMA/K</h3>
-          <p class="text-1xl mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora maxime eos saepe impedit repudiandae dignissimos? Animi officia dicta sed quia explicabo voluptatum nobis excepturi at!</p>
-          <h2 class="text-3xl text-blue-600 mb-2">Rp 3.500.000</h2>
-          <a href="https://wa.me/6281265455845?text=Halo%20saya%20tertarik%20dengan%20program%20kelas%20di%20Talent%20Code%20Center.%20Mohon%20informasinya."
-          target="_blank"
-          class="inline-block bg-amber-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-          Chat WA Sekarang
-        </a>
-        </div>
-      </div>
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white">
+        Kelas Pilihan
+      </h2>
+      <div class="mt-3 w-20 h-1 bg-amber-400 mx-auto rounded"></div>
     </div>
-  </section>
+
+    <!-- Class Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- SD -->
+      <div class="bg-white p-5 rounded-xl shadow-xl hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/sd.png" alt="Kelas SD" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-gray-900">KKA Lanjutan SD</h3>
+        <p class="text-gray-600 mb-3 text-sm">
+          Pembelajaran koding dan AI berbasis unplugged dan project kreatif.
+        </p>
+        <h2 class="text-3xl font-bold text-indigo-700 mb-4">Rp 2.500.000</h2>
+        <a href="#"
+           class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Selengkapnya
+        </a>
+      </div>
+
+      <!-- SMP -->
+      <div class="bg-white p-5 rounded-xl shadow-xl hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/smp.png" alt="Kelas SMP" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-gray-900">KKA Lanjutan SMP</h3>
+        <p class="text-gray-600 mb-3 text-sm">
+          Coding plugged menggunakan Scratch, Pictoblox, dan simulasi AI.
+        </p>
+        <h2 class="text-3xl font-bold text-indigo-700 mb-4">Rp 3.000.000</h2>
+        <a href="#"
+           class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Selengkapnya
+        </a>
+      </div>
+
+      <!-- SMA/SMK -->
+      <div class="bg-white p-5 rounded-xl shadow-xl hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/smk.png" alt="Kelas SMA/SMK" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2 text-gray-900">KKA Lanjutan SMA/K</h3>
+        <p class="text-gray-600 mb-3 text-sm">
+          Project berbasis data, AI tools, dan problem solving dunia nyata.
+        </p>
+        <h2 class="text-3xl font-bold text-indigo-700 mb-4">Rp 3.500.000</h2>
+        <a href="https://wa.me/6281265455845"
+           target="_blank"
+           class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          Selengkapnya
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Fasil Section -->
 <section id="fasilitator" class="min-h-screen flex items-center py-16 bg-gray-100 dark:bg-gray-900">
@@ -331,22 +351,22 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Card 1 -->
       <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-        <img src="img/fasil.png">
-        <h3 class="text-xl font-semibold mt-4">Mr AAA</h3>
+        <img src="img/f-karnudi.jpeg">
+        <h3 class="text-xl font-semibold mt-4">Master Karnudi, S.Kom</h3>
         <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
-        <p class="mt-2 mb-2">Trainer BNSP KKNI Level 4</p>
-        <p class="mt-2 mb-2">Trainer Kartu Prakerja</p>
+        <p class="mt-2 mb-2">Asesor Kompetensi BNSP</p>
+        <p class="mt-2 mb-2">Master Trainer Karirjitu Indonesia</p>
         <p class="mt-2 mb-2">Trainer Corporate Training</p>
-        <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
+        <p class="mt-2 mb-2">Trainer Diklat Disnaker, BBPVP</p>
       </div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-        <img src="img/fasil.png">
-        <h3 class="text-xl font-semibold mt-4">Mr AA</h3>
+       <!-- Card 2 -->
+       <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/f-sayid.jpeg">
+        <h3 class="text-xl font-semibold mt-4">Sayid.S.A, S.Kom, MMSI</h3>
         <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
         <p class="mt-2 mb-2">Trainer BNSP KKNI Level 4</p>
-        <p class="mt-2 mb-2">Trainer Kartu Prakerja</p>
         <p class="mt-2 mb-2">Trainer Corporate Training</p>
-        <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
+        <p class="mt-2 mb-2">Trainer Lembaga Pelatihan Digital</p>
       </div>
       <!-- Card 3 -->
       <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
@@ -358,6 +378,94 @@
         <p class="mt-2 mb-2">Trainer Corporate Training</p>
         <p class="mt-2 mb-2">Trainer Diklat Online Nasional</p>
       </div>
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/f-teguh.jpeg">
+        <h3 class="text-xl font-semibold mt-4">Master Teguh Priyanto, A.Md. (TFN), S.Pd.I., M.M</h3>
+        <p class="mt-2 mb-2">Fasilitator Kemendikdasmen</p>
+        <p class="mt-2 mb-2">Master Trainer BNSP</p>
+        <p class="mt-2 mb-2">Curriculum Developer for Vocational School</p>
+        <p class="mt-2 mb-2">ASESOR BAN SM dan BNSP</p>
+        <p class="mt-2 mb-2">Master GERAGOGY</p>
+      </div>
+       <!-- Card 5 -->
+       <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/fasil.png">
+        <h3 class="text-xl font-semibold mt-4">Mr AA</h3>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+      </div>
+      <!-- Card 6 -->
+       <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+        <img src="img/fasil.png">
+        <h3 class="text-xl font-semibold mt-4">Mr AA</h3>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+        <p class="mt-2 mb-2">-</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="min-h-screen flex items-center py-16 bg-gradient-to-br from-blue-600 to-indigo-700">
+  <div class="container mx-auto px-6">
+
+    <!-- Title -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white">
+        Portofolio
+      </h2>
+      <div class="mt-3 w-20 h-1 bg-amber-400 mx-auto rounded"></div>
+      <p class="mt-4 text-white/90 max-w-2xl mx-auto">
+        Dokumentasi kegiatan, pelatihan, dan implementasi pembelajaran
+      </p>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Item 1 -->
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/port-2.jpeg" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">
+            Pelatihan KKA Guru SD
+          </h3>
+          <p class="text-sm text-gray-600">
+            Implementasi Koding & Kecerdasan Artifisial untuk Guru SD
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/port-1.jpeg" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">
+            Workshop untuk Guru SMP
+          </h3>
+          <p class="text-sm text-gray-600">
+            Pemanfaatan AI untuk membuat modul pembelajaran & RPP
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition">
+        <img src="img/port-3.jpeg" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-gray-900">
+            Sertifikasi BNSP
+          </h3>
+          <p class="text-sm text-gray-600">
+            Pelatihan & Sertifikasi BNSP
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
